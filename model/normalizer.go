@@ -1,8 +1,12 @@
-package predict
+package model
 
 import "strconv"
 
-func (p *Predict) Normalizer(data *Data, km string) error {
+type Norm interface {
+	Normaliz(data *Data, km string)
+}
+
+func (p *Predict) Normaliz(data *Data, km string) error {
 	var err error
 
 	p.Teth0, err = strconv.ParseFloat(data.Teth0, 64)

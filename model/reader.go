@@ -1,4 +1,4 @@
-package predict
+package model
 
 import (
 	"io/ioutil"
@@ -12,7 +12,11 @@ type Data struct {
 	Max   string
 }
 
-func (p *Predict) Reader(path string) (*Data, error) {
+type Reader interface {
+	Read(path string) (*Data, error)
+}
+
+func (p *Predict) Read(path string) (*Data, error) {
 	blob, errReadFile := ioutil.ReadFile(path)
 	if errReadFile != nil {
 		return nil, errReadFile
