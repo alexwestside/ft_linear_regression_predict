@@ -3,10 +3,10 @@ package model
 import "strconv"
 
 type Norm interface {
-	Normaliz(data *Data, km string)
+	Normalize(data *Data, km string)
 }
 
-func (p *Predict) Normaliz(data *Data, km string) error {
+func (p *Predict) Normalize(data *Data, km string) error {
 	var err error
 
 	p.Teth0, err = strconv.ParseFloat(data.Teth0, 64)

@@ -19,7 +19,7 @@ func main() {
 		fmt.Println(err)
 	}
 
-	err = prd.Normaliz(data, km)
+	err = prd.Normalize(data, km)
 	if err != nil {
 		fmt.Println(err)
 	}
