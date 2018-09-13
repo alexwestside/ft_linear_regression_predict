@@ -6,7 +6,7 @@ import (
 )
 
 const (
-	path = "data.yaml"
+	path = "../ft_linear_regression_train/data.yaml"
 	km   = "176000"
 )
 
@@ -24,7 +24,5 @@ func main() {
 		fmt.Println(err)
 	}
 
-	res := prd.Predict()
-
-	prd.Print(res)
+	prd.Print(prd.Predict())
 }

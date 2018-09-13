@@ -1,6 +1,9 @@
 package model
 
-import "strconv"
+import (
+	"strconv"
+	"fmt"
+)
 
 type Norm interface {
 	Normalize(data *Data, km string)
@@ -9,30 +12,16 @@ type Norm interface {
 func (p *Predict) Normalize(data *Data, km string) error {
 	var err error
 
-	p.Teth0, err = strconv.ParseFloat(data.Teth0, 64)
-	if err != nil {
-		return err
-	}
-
-	p.Teth1, err = strconv.ParseFloat(data.Teth1, 64)
-	if err != nil {
-		return err
-	}
-
-	p.Max, err = strconv.ParseFloat(data.Max, 64)
-	if err != nil {
-		return err
-	}
-
-	p.Min, err = strconv.ParseFloat(data.Min, 64)
-	if err != nil {
-		return err
-	}
-
 	p.Km, err = strconv.ParseFloat(km, 64)
 	if err != nil {
-		return err
+		fmt.Println(err)
 	}
+
+	p.Teth0 = data.Teth0
+	p.Teth1 = data.Teth1
+	p.Dvi = data.Dvi
+	p.Max = data.Max
+	p.Min = data.Min
 
 	return nil
 }

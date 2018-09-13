@@ -6,10 +6,11 @@ import (
 )
 
 type Data struct {
-	Teth0 string
-	Teth1 string
-	Min   string
-	Max   string
+	Teth0 float64
+	Teth1 float64
+	Min   float64
+	Max   float64
+	Dvi   float64
 }
 
 type Reader interface {

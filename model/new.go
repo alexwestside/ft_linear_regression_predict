@@ -6,11 +6,11 @@ type Predict struct {
 	Min   float64
 	Max   float64
 	Km    float64
+	Dvi   float64
 	Reader
 	Norm
 	Printer
 	Predicter
-
 }
 
 func New() *Predict {
