@@ -43,7 +43,7 @@ func (p *Predict) serve(cmd *cobra.Command, args []string) {
 		p.ErrorHandler(err)
 		fmt.Println(" -> Read data from:", path)
 
-		if km := cmd.Flag(dataFlag).Value.String(); path != "" {
+		if km := cmd.Flag(dataFlag).Value.String(); km != "" {
 			err = p.Normalize(df, km)
 			p.ErrorHandler(err)
 
@@ -56,5 +56,4 @@ func (p *Predict) serve(cmd *cobra.Command, args []string) {
 	} else {
 		fmt.Println("Read target not defined")
 	}
-
 }
