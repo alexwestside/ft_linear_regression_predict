@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/ft_linear_regression_predict/model"
-	"fmt"
+	"os"
 )
 
 const (
@@ -11,18 +11,10 @@ const (
 )
 
 func main() {
-
 	prd := model.New()
 
-	data, err := prd.Read(path)
-	if err != nil {
-		fmt.Println(err)
-	}
+	err := prd.NewCommand().Execute()
+	prd.ErrorHandler(err)
 
-	err = prd.Normalize(data, km)
-	if err != nil {
-		fmt.Println(err)
-	}
-
-	prd.Print(prd.Predict())
+	os.Exit(0)
 }

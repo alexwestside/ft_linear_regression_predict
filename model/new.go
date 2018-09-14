@@ -11,6 +11,7 @@ type Predict struct {
 	Norm
 	Printer
 	Predicter
+	Commander
 }
 
 func New() *Predict {
