@@ -5,7 +5,7 @@ import (
 )
 
 type Norm interface {
-	Normalize(data *Data, km string)
+	Normalize(km string) *Predict
 }
 
 func (p *Predict) Normalize(km string) *Predict {

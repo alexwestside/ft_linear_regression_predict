@@ -1,10 +1,10 @@
 package prediction
 
 type Predict struct {
-	Teth0 float64
-	Teth1 float64
-	Min   float64
-	Max   float64
+	Teta0 float64
+	Teta1 float64
+	Minval   float64
+	Maxval   float64
 	Km    float64
 	Dvi   float64
 }

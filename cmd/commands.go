@@ -25,7 +25,7 @@ func predict() (cmd *cobra.Command) {
 			} else if iv := cmd.Flag("i").Value.String(); iv == "" {
 				handler("independent variable")
 			} else {
-				result, dvi := prediction.New().Read(path).Normalize(iv).Predict()
+				result, dvi := prediction.New().Read(path, iv).Predict()
 				fmt.Println("RESULT:")
 				fmt.Println(fmt.Sprintf("Price is %.2f +/- %.2f", math.Ceil(result*100)/100, math.Ceil(dvi*100)/100))
 			}
