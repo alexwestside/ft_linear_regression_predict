@@ -1,0 +1,34 @@
+package cmd
+
+import (
+	"github.com/spf13/cobra"
+	"github.com/ft_linear_regression_predict/prediction"
+	"fmt"
+	"math"
+)
+
+func Commands(rootCmd *cobra.Command) *cobra.Command {
+	rootCmd.PersistentFlags().String("t", "", "read target")
+	rootCmd.PersistentFlags().String("i", "", "read independent variable")
+	rootCmd.AddCommand(predict())
+	return rootCmd
+}
+
+func predict() (cmd *cobra.Command) {
+	return &cobra.Command{
+		Use:   "predict",
+		Short: "predict",
+		Run: func(cmd *cobra.Command, args []string) {
+			var path string
+			if path = cmd.Flag("t").Value.String(); path == "" {
+				handler("target")
+			} else if iv := cmd.Flag("i").Value.String(); iv == "" {
+				handler("independent variable")
+			} else {
+				result, dvi := prediction.New().Read(path).Normalize(iv).Predict()
+				fmt.Println("RESULT:")
+				fmt.Println(fmt.Sprintf("Price is %.2f +/- %.2f", math.Ceil(result*100)/100, math.Ceil(dvi*100)/100))
+			}
+		},
+	}
+}

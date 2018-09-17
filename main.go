@@ -1,15 +1,16 @@
 package main
 
 import (
-	"github.com/ft_linear_regression_predict/model"
-	"os"
+	"github.com/ft_linear_regression_predict/cmd"
+	"github.com/spf13/cobra"
 )
 
 func main() {
-	prd := model.New()
 
-	err := prd.NewCommand().Execute()
-	prd.ErrorHandler(err)
+	cmd.Commands(&cobra.Command{
+		Use:   "app",
+		Short: "The Linear Regression prediction service",
+		Long:  "PROJECT: ft_linear_regression (prediction)",
+	}).Execute()
 
-	os.Exit(0)
 }

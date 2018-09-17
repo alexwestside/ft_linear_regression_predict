@@ -1,4 +1,4 @@
-package model
+package prediction
 
 import (
 	"fmt"
@@ -9,7 +9,7 @@ type ErrorsHandler interface {
 	ErrorHandler(err error)
 }
 
-func (l *Predict) ErrorHandler(err error) {
+func ErrorHandler(err error) {
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
