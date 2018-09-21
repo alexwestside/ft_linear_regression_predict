@@ -7,12 +7,11 @@ import (
 	"fmt"
 )
 
-
 type Reader interface {
 	Read(path string) *Predict
 }
 
-func (p *Predict) Read(path string, iv string) *Predict{
+func (p *Predict) Read(path string, iv string) *Predict {
 	blob, errReadFile := ioutil.ReadFile(path)
 	ErrorHandler(errReadFile)
 
@@ -23,7 +22,7 @@ func (p *Predict) Read(path string, iv string) *Predict{
 	p.Km, err = strconv.ParseFloat(iv, 64)
 	ErrorHandler(err)
 
-	fmt.Println(p)
+	fmt.Println(fmt.Sprintf("Incoming Independent variable: %.2f", p.Km))
 
 	return p
 }
