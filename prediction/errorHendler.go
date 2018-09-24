@@ -5,10 +5,6 @@ import (
 	"os"
 )
 
-type ErrorsHandler interface {
-	ErrorHandler(err error)
-}
-
 func ErrorHandler(err error) {
 	if err != nil {
 		fmt.Println(err)

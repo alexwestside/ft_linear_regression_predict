@@ -12,5 +12,4 @@ func main() {
 		Short: "The Linear Regression prediction service",
 		Long:  "PROJECT: ft_linear_regression (prediction)",
 	}).Execute()
-
 }

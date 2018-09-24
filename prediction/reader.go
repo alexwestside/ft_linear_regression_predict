@@ -7,10 +7,6 @@ import (
 	"fmt"
 )
 
-type Reader interface {
-	Read(path string) *Predict
-}
-
 func (p *Predict) Read(path string, iv string) *Predict {
 	blob, errReadFile := ioutil.ReadFile(path)
 	ErrorHandler(errReadFile)
