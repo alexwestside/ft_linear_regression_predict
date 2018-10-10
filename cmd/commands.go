@@ -26,8 +26,18 @@ func predict() (cmd *cobra.Command) {
 				handler("independent variable")
 			} else {
 				result, dvi := prediction.New().Read(path, iv).Predict()
-				fmt.Println(fmt.Sprintf("RESULT: Price is %.2f +/- %.2f", math.Ceil(result*100)/100, math.Ceil(dvi*100)/100))
+				output(result, dvi)
+				//fmt.Println(fmt.Sprintf("RESULT: Price is %.2f +/- %.2f", math.Ceil(result*100)/100, math.Ceil(dvi*100)/100))
 			}
 		},
 	}
+}
+
+
+func output(result float64, dvi float64) {
+	fmt.Println("------------------------------------------------------------------")
+	fmt.Print("Liner regression -> PREDICT MODE")
+	fmt.Println("------------------------------------------------------------------")
+	fmt.Println(fmt.Sprintf("RESULT: Price is %.2f +/- %.2f", math.Ceil(result*100)/100, math.Ceil(dvi*100)/100))
+	fmt.Println("------------------------------------------------------------------")
 }
