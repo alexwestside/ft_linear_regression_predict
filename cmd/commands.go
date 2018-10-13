@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"github.com/spf13/cobra"
-	"github.com/ft_linear_regression_predict/prediction"
+	"github.com/ft_linear_regression/ft_linear_regression_predict/prediction"
 	"fmt"
 	"math"
 )

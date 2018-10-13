@@ -167,8 +167,9 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="2560" />
-    <option name="height" value="1440" />
+    <option name="y" value="-30" />
+    <option name="width" value="1920" />
+    <option name="height" value="1110" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -240,8 +241,8 @@
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="11" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.27106228" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.31062272" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.27106228" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.31062272" />
       <window_info anchor="right" id="Jenkins" order="3" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2494043" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
